@@ -1,0 +1,30 @@
+{
+	"name": "MagLab Project",
+	"build": {
+		"dockerfile": "Dockerfile",
+		// Update 'VARIANT' to pick a Python version: 3, 3.6, 3.7, 3.8, 3.9
+		"args": { "VARIANT": "3.9" }
+	  },
+	"forwardPorts": [8888],  // Forward the JupyterLab port
+	"postCreateCommand": "jupyter lab --ip=0.0.0.0 --allow-root",
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"terminal.integrated.shell.linux": "/bin/bash"
+			},
+			"extensions": [
+				"streetsidesoftware.code-spell-checker",
+				"hediet.vscode-drawio",
+				"iterative.dvc",
+				"GitHub.copilot-nightly",
+				"GitHub.copilot-chat",
+				"ms-toolsai.jupyter",
+				"ms-python.python",
+				"quarto.quarto",
+				"stardog-union.stardog-rdf-grammars",
+				"Zazuko.vscode-rdf-sketch",
+				"bierner.markdown-mermaid"
+			]
+		}
+	}
+}
